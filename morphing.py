@@ -100,7 +100,7 @@ if __name__ == '__main__' :
     img1 = np.float32(cv2.imread(faceimg1))
     img2 = np.float32(cv2.imread(faceimg2))
 
-    for i in range(1):
+    for i in range(1, 101):
         if (i % 10) == 0:
             print('progress... {} %'.format(i))
         alpha = i * 0.01
@@ -133,5 +133,5 @@ if __name__ == '__main__' :
             morph_points(img1, img2, output, tri1, tri2, tri_dst, alpha)
 
         #画像を保存
-        # output = np.uint8(output)
-        # cv2.imwrite('output/%d_img.jpg' % i, output)
+        output = np.uint8(output)
+        cv2.imwrite('output/%d_img.jpg' % i, output)
